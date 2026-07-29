@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DivisorsLinearSystemsInvertibleSheavesCanonicalLaneLean.InvertibleSheaves
+import HautevilleHouse.DivisorsLinearSystemsInvertibleSheavesCanonicalLaneLean.DivisorClassGroup
+import HautevilleHouse.DivisorsLinearSystemsInvertibleSheavesCanonicalLaneLean.PicardGroup
+import HautevilleHouse.DivisorsLinearSystemsInvertibleSheavesCanonicalLaneLean.RiemannRochTheorem
+
+namespace HautevilleHouse
+namespace DivisorsLinearSystemsInvertibleSheavesCanonicalLaneLean
+
+def DivisorsLinearSystemsInvertibleSheavesClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem divisors_linear_systems_invertible_sheaves_endgame (A : AdmissibleClass) :
+    DivisorsLinearSystemsInvertibleSheavesClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DivisorsLinearSystemsInvertibleSheavesCanonicalLaneLean
+end HautevilleHouse
